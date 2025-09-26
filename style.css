@@ -1,0 +1,579 @@
+/* Importar Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap');
+
+/* Variáveis CSS para Cores e Fontes */
+:root {
+    --primary-color: #2e7d32; /* Verde Escuro */
+    --secondary-color: #1976d2; /* Azul Médio */
+    --accent-color: #66bb6a; /* Verde Claro */
+    --text-color: #333;
+    --light-gray: #f4f4f4;
+    --dark-gray: #555;
+    --white: #fff;
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Container Global */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: 2px solid var(--secondary-color);
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: #42a5f5; /* Um tom mais claro de azul */
+    border-color: #42a5f5;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* 1. Cabeçalho (Header) */
+.main-header {
+    background-color: var(--primary-color); /* Fundo verde escuro */
+    color: var(--white);
+    padding: 15px 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ... seu CSS anterior ... */
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ADICIONE ESTA PARTE ABAIXO */
+.logo img {
+    height: 100px;  /* Ajuste este valor como preferir (ex: 40px, 60px) */
+    width: auto;   /* O 'auto' mantém a proporção da imagem */
+}
+/* FIM DA PARTE ADICIONADA */
+
+
+.logo span {
+    color: var(--white);
+}
+
+/* ... resto do seu CSS ... */
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    color: var(--white);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* 2. Seção Principal (Hero Section) */
+.hero-section {
+    background: url('img/imagemPrincipal.png') no-repeat center center/cover; /* <--- NOVA LINHA AQUI */
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+    /* Efeito de sobreposição para texto legível */
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Escurece a imagem de fundo */
+}
+
+
+.hero-content {
+    position: relative; /* Para garantir que o conteúdo fique acima da sobreposição */
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--white); /* Título em branco */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+/* 3. Seção Introdutória */
+.intro-section {
+    background-color: var(--light-gray);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.intro-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.intro-text {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.intro-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.feature-item {
+    flex: 1;
+    max-width: 300px;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-item .icon-large {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+}
+
+
+/* 4. Apresentação dos Temas (Seções Divididas) */
+.themes-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.theme-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px; /* Espaço entre os cards */
+    gap: 40px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    overflow: hidden; /* Garante que a imagem não vaze */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.theme-card:last-child {
+    margin-bottom: 0;
+}
+
+.theme-card .theme-image {
+    flex: 1;
+    min-width: 40%; /* Garante que a imagem não fique muito pequena */
+}
+
+.theme-card .theme-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir o container */
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+.theme-card .theme-content {
+    flex: 2;
+    padding: 40px;
+}
+
+.theme-card.card-right {
+    flex-direction: row-reverse; /* Inverte a ordem para imagem à direita */
+}
+
+.theme-content .tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.theme-content h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.theme-content p {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* 5. Seção de Notícias e Atualizações */
+.news-section {
+    background-color: var(--light-gray);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.news-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 colunas, responsivo */
+    gap: 30px;
+}
+
+.news-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-item .news-category {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    margin: 15px 0 10px 15px;
+}
+
+.news-item h4 {
+    font-size: 1.25rem;
+    color: var(--dark-gray);
+    margin: 0 15px 10px 15px;
+    line-height: 1.4;
+}
+
+.news-item p {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    margin: 0 15px 15px 15px;
+}
+
+.news-item a {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 0 15px 20px 15px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.news-item a:hover {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* 6. Rodapé (Footer) */
+.main-footer {
+    background-color: #212121; /* Quase preto, para um bom contraste */
+    color: var(--white);
+    padding: 50px 0 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Para responsividade */
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col.logo-col img {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.footer-col.logo-col span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.footer-col.logo-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 15px;
+    color: rgba(255,255,255,0.7);
+}
+
+.footer-col h4 {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: rgba(255,255,255,0.7);
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.footer-bottom a {
+    color: rgba(255,255,255,0.5);
+    margin: 0 5px;
+}
+
+.footer-bottom a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Responsividade Básica (para telas menores) --- */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav ul li {
+        margin: 0 10px 10px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-secondary {
+        margin-left: 0;
+    }
+
+    .intro-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-item {
+        margin-bottom: 20px;
+    }
+
+    .theme-card {
+        flex-direction: column;
+    }
+    .theme-card.card-right {
+        flex-direction: column; /* Também coluna para card-right */
+    }
+    .theme-card .theme-content {
+        padding: 30px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        min-width: unset;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer-col.logo-col {
+        margin-bottom: 20px;
+    }
+    .footer-col ul {
+        padding: 0; /* Remove padding padrão de UL */
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 100px 0;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    .intro-section h2, .news-section h2 {
+        font-size: 2rem;
+    }
+    .theme-content h3 {
+        font-size: 1.5rem;
+    }
+}
