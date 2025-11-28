@@ -26,7 +26,6 @@ O site é composto por uma arquitetura multi-página totalmente responsiva:
 - **Energia Limpa:** Detalhamento das fontes renováveis e cenário brasileiro.
 - **Indústria e Inovação:** Exploração da Indústria 4.0 e tecnologias emergentes.
 - **Nossa Conexão:** A tese central do projeto, mostrando o ciclo virtuoso entre energia e indústria.
-- **Blog/Notícias:** Listagem de artigos e atualizações sobre o setor.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -44,7 +43,6 @@ futuro-sustentavel/
 ├── energia.html        # Página sobre ODS 7
 ├── industria.html      # Página sobre ODS 9
 ├── conexao.html        # Página sobre a sinergia dos temas
-├── blog.html           # Página de Notícias
 ├── style.css           # Folha de estilos única para todo o site
 ├── README.md           # Documentação do projeto
 └── img/                # Pasta de imagens e logos
